@@ -1,0 +1,8 @@
+Data_Raw/
+*.gdb/
+*.aprx
+*.zip
+.env
+.env.*
+node_modules/
+.DS_Store

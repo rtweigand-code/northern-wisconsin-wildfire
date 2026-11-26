@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Northern Wisconsin Wildfire Preparedness</title>
+<link rel="stylesheet" href="https://js.arcgis.com/4.34/esri/themes/light/main.css">
+<link rel="stylesheet" href="styles.css">
+<script src="communities.js" defer></script>
+<script src="https://js.arcgis.com/4.34/" defer onerror="document.getElementById('status').textContent='Map library could not load. Check your internet connection. Community search is still available.'"></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header><div class="brand">NORTHERN WISCONSIN</div><h1>Wildfire preparedness</h1><p>Explore community risk. Understand the local context.</p></header>
+<div class="workspace">
+<aside class="explore" aria-label="Explore communities">
+<h2>Find a community</h2>
+<label for="search">Community name</label><input id="search" type="search" placeholder="Search St. Germain, Minocqua…">
+<label for="county">County</label><select id="county"><option value="">All counties</option></select>
+<label for="risk">DNR classification</label><select id="risk"><option value="">All classifications</option><option>Very High</option><option>High</option><option>Concern</option></select>
+<div class="legend"><span><i class="very-high"></i>Very High</span><span><i class="high"></i>High</span><span><i class="concern"></i>Concern</span></div>
+<div class="section"><h2>Map layers</h2><label class="check"><input id="points" type="checkbox" checked> DNR community points</label><p class="muted">Historical fires and daily fire danger will be connected in a later version.</p></div>
+<div class="section"><h2>At a glance</h2><p id="count" aria-live="polite"></p><div id="results" class="results"></div></div>
+</aside>
+<main aria-label="Community map"><div id="viewDiv"></div><div id="status" role="status">Loading map…</div><button id="reset" class="map-button" type="button">Reset map</button><div class="map-caption">Statewide source data · Study area to be finalized</div></main>
+<aside class="details" aria-label="Selected community" aria-live="polite">
+<div class="eyebrow">COMMUNITY DETAILS</div><h2 id="communityName">Choose a community</h2><p id="location">Select a point on the map or a name in the list.</p>
+<div class="risk-card"><span>Long-term DNR classification</span><strong id="classification">—</strong><p id="riskNote">This classification comes from the supplied DNR community list. It is different from daily fire danger.</p></div>
+<h3>Community context</h3><dl><div><dt>Resident population</dt><dd>Pending data join</dd></div><div><dt>Recorded wildfires, 2012–2025</dt><dd>Pending summary</dd></div><div><dt>Major highway routes</dt><dd>Pending review</dd></div></dl>
+<p id="matchNote" class="muted"></p>
+<div class="section"><h3>Preparedness resources</h3><a href="https://dnr.wisconsin.gov/topic/forestfire" target="_blank" rel="noopener noreferrer">Wisconsin DNR wildfire information</a></div>
+<div class="section muted"><strong>About this first version</strong><p>569 located records from the statewide DNR list. Five Menominee TRS records still need locations. Points represent municipalities and may not fall in settlement centers. Source classifications have not been independently updated.</p><p>This map provides preparedness information. For an active emergency, follow local authorities.</p></div>
+</aside></div>
+<noscript>Enable JavaScript to use the interactive map.</noscript>
+</body></html>
